@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Snippets & Thumbnails -->
+    <template id="snippet_place" inherit_id="website.snippets">
+        <xpath expr="//div[@id='snippet_feature']/div[hasclass('o_panel_body')]" position="inside">
+            <t t-snippet="tadeas_theme.s_business"
+               t-thumbnail="/tadeas_theme/static/src/img/icon.png"/>
+            <t t-snippet="tadeas_theme.s_ecommerce"
+               t-thumbnail="/tadeas_theme/static/src/img/icon.png"/>
+            <t t-snippet="tadeas_theme.s_our_team"
+               t-thumbnail="/tadeas_theme/static/src/img/icon.png"/>
+            <t t-snippet="tadeas_theme.s_services"
+               t-thumbnail="/tadeas_theme/static/src/img/icon.png"/>
+            <t t-snippet="tadeas_theme.s_tab_carousel"
+               t-thumbnail="/tadeas_theme/static/src/img/icon.png"/>
+            <t t-snippet="tadeas_theme.s_theme_banner"
+               t-thumbnail="/tadeas_theme/static/src/img/icon.png"/>
+            <t t-snippet="tadeas_theme.s_img_contain"
+               t-thumbnail="/tadeas_theme/static/src/img/icon.png"/>
+            <t t-snippet="tadeas_theme.s_three_imgs"
+               t-thumbnail="/tadeas_theme/static/src/img/icon.png"/>
+        </xpath>
+    </template>
+
+    <!-- Less & JS Assets -->
+    <template id="theme_assets_frontend" name="Product Carousel Frontend Assets"
+              inherit_id="website.assets_frontend">
+        <xpath expr="." position="inside">
+
+            <link href="/tadeas_theme/static/src/scss/mid_header.scss"
+                  rel="stylesheet" type="text/scss"/>
+            <link href="/tadeas_theme/static/src/scss/homepage.scss"
+                  rel="stylesheet" type="text/scss"/>
+            <script type="text/javascript"
+                    src="/tadeas_theme/static/src/js/theme_common.js"/>
+            <link href="/tadeas_theme/static/src/scss/product_carousel.scss"
+                  rel="stylesheet" type="text/scss"/>
+            <link href="/tadeas_theme/static/src/scss/testimonial.scss"
+                  rel="stylesheet" type="text/scss"/>
+            <link href="/tadeas_theme/static/src/scss/services.scss"
+                  rel="stylesheet" type="text/scss"/>
+            <link href="/tadeas_theme/static/src/scss/footer.scss"
+                  rel="stylesheet" type="text/scss"/>
+            <link href="/tadeas_theme/static/src/scss/shop_template.scss"
+                  rel="stylesheet" type="text/scss"/>
+            <link href="/tadeas_theme/static/src/scss/single_product.scss"
+                  rel="stylesheet" type="text/scss"/>
+            <link href="/tadeas_theme/static/src/scss/cart_view.scss"
+                  rel="stylesheet" type="text/scss"/>
+            <link href="/tadeas_theme/static/src/scss/blog.scss"
+                  rel="stylesheet" type="text/scss"/>
+            <link href="/tadeas_theme/static/src/scss/contact_us.scss"
+                  rel="stylesheet" type="text/scss"/>
+            <link href="/tadeas_theme/static/src/scss/about_us.scss"
+                  rel="stylesheet" type="text/scss"/>
+            <link href="/tadeas_theme/static/src/scss/business_homepage.scss"
+                  rel="stylesheet" type="text/scss"/>
+            <script type="text/javascript"
+                    src="/tadeas_theme/static/src/js/nicescroll.js"/>
+            <script type="text/javascript"
+                    src="/tadeas_theme/static/src/js/view_switcher.js"/>
+            <script type="text/javascript"
+                    src="/tadeas_theme/static/src/js/website_sale.js"/>
+
+        </xpath>
+    </template>
+    <template id="fix_top_inherit" inherit_id="portal.frontend_layout"
+              name="Affix Top Menu" active="True" customize_show="True">
+        <xpath expr="//header/nav" position="attributes">
+            <attribute name="id">nav_top_fix</attribute>
+        </xpath>
+    </template>
+</odoo>

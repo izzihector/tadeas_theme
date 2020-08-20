@@ -1,0 +1,64 @@
+<odoo>
+    <template id="s_three_imgs" name="Three Images Block">
+        <section class="mt64 mb64">
+            <div id="home-offer-banner" class="container-fluid">
+                <div class="offer-banner-items">
+
+                    <div class="offer-banner-above row">
+
+
+                        <div class="offer-banner-1 col-sm-6 pad0">
+                            <a href="#">
+                                <img src="/tadeas_theme/static/src/img/offer_banner_1.jpg"
+                                     alt=""/>
+                            </a>
+                        </div>
+
+
+                        <div class="offer-banner-2 col-sm-6 pad0">
+                            <a href="#">
+                                <img src="/tadeas_theme/static/src/img/offer_banner_2.jpg"
+                                     alt=""/>
+                            </a>
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="offer-banner-below row">
+
+
+                        <div class="offer-banner-3 pad0 col-sm-4">
+                            <a href="#">
+                                <img src="/tadeas_theme/static/src/img/offer_banner_3.jpg"
+                                     alt=""/>
+                            </a>
+                        </div>
+
+
+                        <div class="offer-banner-4 pad0 col-sm-4">
+                            <a href="#">
+                                <img src="/tadeas_theme/static/src/img/offer_banner_4.jpg"
+                                     alt=""/>
+                            </a>
+                        </div>
+
+
+                        <div class="offer-banner-5 pad0 col-sm-4">
+                            <a href="#">
+                                <img src="/tadeas_theme/static/src/img/offer_banner_5.jpg"
+                                     alt=""/>
+                            </a>
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+    </template>
+
+</odoo>

@@ -1,0 +1,421 @@
+<odoo>
+    <template id="s_ecommerce" name="E-commerce Homepage">
+        <section class="mt32 mb32">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 d-none d-sm-block col-lg-3 col-sm-3">
+                        <div class="porto-links-block wpb_content_element  m-b-none background-color-light">
+                            <div class="links-title">Top Categories</div>
+                            <div class="links-content">
+                                <ul class="nav navbar-nav">
+                                    <t t-set="categories"
+                                       t-value="website.get_search_categories() if website else None"/>
+                                    <t t-if="categories">
+                                        <t t-foreach="categories['categories']" t-as="categ">
+                                            <li class="porto-links-item nav-item">
+                                                <a t-att-href="'/shop/category/%s' % (categ.id)" class="nav-link">
+                                                    <i class="fa fa-minus" aria-hidden="true"></i>
+                                                    <span t-field="categ.name"></span>
+                                                </a>
+                                            </li>
+                                        </t>
+                                    </t>
+                                    <div class="vc_empty_space" style="height: 25px">
+                                        <span class="vc_empty_space_inner"></span>
+                                    </div>
+                                    <div class="text-center">
+                                        <a class="vc_btn3 vc_btn3-shape-square vc_btn3-block btn btn-md btn-primary"
+                                           href="/shop" title="">HUGE SALE - 70% Off
+                                        </a>
+                                    </div>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-9 col-12 col-lg-9 col-sm-9">
+                        <div id="myCarousel1544629000328"
+                             class="s_carousel s_carousel_default carousel slide" data-interval="10000">
+                            <ol class="carousel-indicators">
+                                <li data-target="#myCarousel1544629000328" data-slide-to="0"
+                                    class="active"/>
+                                <li data-target="#myCarousel1544629000328" data-slide-to="1"/>
+                                <li data-target="#myCarousel1544629000328" data-slide-to="2"/>
+                            </ol>
+                            <div class="carousel-inner">
+                                <div class="carousel-item oe_custom_bg oe_img_bg pt152 pb152 active"
+                                     style="background-image: url(&quot;/tadeas_theme/static/src/img/shop2_slide1.jpg&quot;);"
+                                     data-name="Slide">
+                                    <div class="container">
+                                        <div class="row content">
+                                            <div class="carousel-content col-lg-6 offset-lg-1">
+                                                <div class="s_title pb8" data-name="Title">
+                                                    <h2 class="s_title_default text-white">
+                                                        <font style="font-size: 62px;"
+                                                              class="o_default_snippet_text">Slide Title
+                                                        </font>
+                                                    </h2>
+                                                </div>
+                                                <p class="lead o_default_snippet_text text-white">Use this snippet
+                                                    to presents your content in a slideshow-like format.
+                                                    <br/>
+                                                    Don't write about products or services here, write
+                                                    about solutions.
+                                                </p>
+                                                <div class="s_btn text-left pt16 pb16"
+                                                     data-name="Buttons">
+                                                    <a href="/aboutus"
+                                                       class="btn btn-secondary flat o_default_snippet_text">
+                                                        About us
+                                                    </a>
+                                                    <a href="/contactus"
+                                                       class="btn btn-primary flat o_default_snippet_text">
+                                                        Contact us
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item oe_custom_bg oe_img_bg pt152 pb152"
+                                     style="background-image: url(&quot;/tadeas_theme/static/src/img/shop2_slide2.jpg&quot;);"
+                                     data-name="Slide">
+                                    <div class="container">
+                                        <div class="row content">
+                                            <div class="carousel-content col-lg-6 offset-lg-1">
+                                                <div class="s_title pb8" data-name="Title">
+                                                    <h2 class="s_title_default">
+                                                        <font style="font-size: 62px;"
+                                                              class="o_default_snippet_text">Slide Title
+                                                        </font>
+                                                    </h2>
+                                                </div>
+                                                <p class="lead o_default_snippet_text">Use this snippet
+                                                    to presents your content in a slideshow-like format.
+                                                    <br/>
+                                                    Don't write about products or services here, write
+                                                    about solutions.
+                                                </p>
+                                                <div class="s_btn text-left pt16 pb16"
+                                                     data-name="Buttons">
+                                                    <a href="/aboutus"
+                                                       class="btn btn-secondary flat o_default_snippet_text">
+                                                        About us
+                                                    </a>
+                                                    <a href="/contactus"
+                                                       class="btn btn-primary flat o_default_snippet_text">
+                                                        Contact us
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item oe_custom_bg oe_img_bg pt152 pb152"
+                                     style="background-image: url(&quot;/tadeas_theme/static/src/img/shop2_slide3.jpg&quot;);"
+                                     data-name="Slide">
+                                    <div class="container">
+                                        <div class="row content">
+                                            <div class="carousel-content col-lg-6 offset-lg-1">
+                                                <div class="s_title pb8" data-name="Title">
+                                                    <h2 class="s_title_default">
+                                                        <font style="font-size: 62px;"
+                                                              class="o_default_snippet_text">Slide Title
+                                                        </font>
+                                                    </h2>
+                                                </div>
+                                                <p class="lead o_default_snippet_text">Use this snippet
+                                                    to presents your content in a slideshow-like format.
+                                                    <br/>
+                                                    Don't write about products or services here, write
+                                                    about solutions.
+                                                </p>
+                                                <div class="s_btn text-left pt16 pb16"
+                                                     data-name="Buttons">
+                                                    <a href="/aboutus"
+                                                       class="btn btn-secondary flat o_default_snippet_text">
+                                                        About us
+                                                    </a>
+                                                    <a href="/contactus"
+                                                       class="btn btn-primary flat o_default_snippet_text">
+                                                        Contact us
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-control-prev" data-target="#myCarousel1544629000328"
+                                 data-slide="prev" role="img" aria-label="Previous" title="Previous">
+                                <span class="carousel-control-prev-icon"/>
+                                <span class="sr-only o_default_snippet_text">Previous</span>
+                            </div>
+                            <div class="carousel-control-next" data-target="#myCarousel1544629000328"
+                                 data-slide="next" role="img" aria-label="Next" title="Next">
+                                <span class="carousel-control-next-icon"/>
+                                <span class="sr-only o_default_snippet_text">Next</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 pad0">
+                        <div class="homepage-imgs">
+
+                            <img class="img img-fluid"
+                                 src="/tadeas_theme/static/src/img/image01.jpg"
+                                 alt=""/>
+                        </div>
+                        <div class="homepage-imgs">
+
+                            <img class="img img-fluid"
+                                 src="/tadeas_theme/static/src/img/image03.jpg"
+                                 alt=""/>
+                        </div>
+                        <div class="homepage-imgs">
+                            <img class="img img-fluid"
+                                 src="/tadeas_theme/static/src/img/image02.jpg"
+                                 alt=""/>
+
+                        </div>
+                    </div>
+                    <div class="col-md-6 pad0">
+                        <div class="homepage-imgs">
+
+                            <img class="img img-fluid"
+                                 src="/tadeas_theme/static/src/img/image21.jpg"
+                                 alt=""/>
+                        </div>
+                        <div class="homepage-imgs">
+                            <img class="img img-fluid"
+                                 src="/tadeas_theme/static/src/img/image22.jpg"
+                                 alt=""/>
+                        </div>
+                        <div class="homepage-imgs">
+                            <img class="img img-fluid"
+                                 src="/tadeas_theme/static/src/img/image23.jpg"
+                                 alt=""/>
+                        </div>
+                    </div>
+                    <div class="col-md-3 pad0">
+                        <div class="homepage-imgs">
+                            <img class="img img-fluid"
+                                 src="/tadeas_theme/static/src/img/image11.jpg"
+                                 alt=""/>
+                        </div>
+                        <div class="homepage-imgs">
+                            <img class="img img-fluid"
+                                 src="/tadeas_theme/static/src/img/image12.jpg"
+                                 alt=""/>
+                        </div>
+                        <div class="homepage-imgs">
+                            <img class="img img-fluid"
+                                 src="/tadeas_theme/static/src/img/image13.jpg"
+                                 alt=""/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="snippet_product_carousel mb8 text-center theme-carousel mt24"
+                 style="background-color: #f4f4f4 !important; padding: 50px 0;">
+            <div class="container">
+                <div class="js_get_objects product_carousel_design"
+                     data-product_view="website_product_carousel.list_of_product_view"
+                     data-objects_in_slide="5" data-objects_limit="10"/>
+            </div>
+        </section>
+        <section class="mt32 mb64">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-sm-4 col-md-4">
+                        <div class="text-center hover-banner4 block-img-ft">
+                            <div class="hover_banner">
+                                <a href="#">
+                                    <img class="img-fluid"
+                                         src="/tadeas_theme/static/src/img/bn21.jpg"
+                                         alt=""/>
+                                </a>
+                                <div class="bn-text banner_text4">
+                                    <h2>Furniture 2018</h2>
+                                    <a class="title_text">Shop now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-4 col-md-4">
+                        <div class="text-center hover-banner4 block-img-ft">
+                            <div class="hover_banner">
+                                <a href="#">
+                                    <img class="img-fluid"
+                                         src="/tadeas_theme/static/src/img/bn22.jpg"
+                                         alt=""/>
+                                </a>
+                                <div class="bn-text banner_text4 banner_text4_ft">
+                                    <h2>new arrivals</h2>
+                                    <p class="title_text">Sale up to</p>
+                                    <h4>50 %off</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-4 col-md-4">
+                        <div class="text-center hover-banner4 block">
+                            <div class="hover_banner">
+                                <a href="#">
+                                    <img class="img-fluid"
+                                         src="/tadeas_theme/static/src/img/bn23.jpg"
+                                         alt=""/>
+                                </a>
+                                <div class="bn-text banner_text4">
+                                    <h2>Furniture 2018</h2>
+                                    <a class="title_text">Shop now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="tab" role="tabpanel">
+                        <!-- Nav tabs -->
+                        <ul class="nav nav-tabs justify-content-center" role="tablist">
+                            <li role="presentation" class="nav-item">
+                                <a href="#Section1" class="show active nav-link" aria-controls="home" role="tab"
+                                   data-toggle="tab">
+                                    <span>
+                                        <i class="fa fa-globe"></i>
+                                    </span>
+                                    FEATURED PRODUCTS
+                                </a>
+                            </li>
+                            <li role="presentation" class="nav-item">
+                                <a href="#Section2" class="nav-link " aria-controls="profile" role="tab"
+                                   data-toggle="tab">
+                                    <span>
+                                        <i class="fa fa-rocket"></i>
+                                    </span>
+                                    LATEST PRODUCTS
+                                </a>
+                            </li>
+                            <li role="presentation" class="nav-item">
+                                <a href="#Section3" class="nav-link " aria-controls="messages" role="tab"
+                                   data-toggle="tab">
+                                    <span>
+                                        <i class="fa fa-briefcase"></i>
+                                    </span>
+                                    BEST SELLING
+                                </a>
+                            </li>
+                        </ul>
+                        <!-- Tab panes -->
+                        <div class="tab-content tabs">
+                            <div role="tabpanel" class="tab-pane active" id="Section1">
+                                <div class="js_get_objects product_carousel_design headline_off text-center"
+                                     data-product_view="website_product_carousel.list_of_product_view"
+                                     data-objects_in_slide="5" data-objects_limit="10"/>
+
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="Section2">
+                                <div class="js_get_objects product_carousel_design headline_off text-center"
+                                     data-product_view="website_product_carousel.list_of_product_view"
+                                     data-objects_in_slide="5" data-objects_limit="10"/>
+
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="Section3">
+                                <div class="js_get_objects product_carousel_design headline_off text-center"
+                                     data-product_view="website_product_carousel.list_of_product_view"
+                                     data-objects_in_slide="5" data-objects_limit="10"/>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="mt64 mb64">
+            <div id="home-offer-banner" class="container-fluid">
+                <div class="offer-banner-items">
+
+                    <div class="offer-banner-above row">
+
+
+                        <div class="offer-banner-1 col-sm-6 pad0">
+                            <a href="#">
+                                <img src="/tadeas_theme/static/src/img/offer_banner_1.jpg"
+                                     alt=""/>
+                            </a>
+                        </div>
+
+
+                        <div class="offer-banner-2 col-sm-6 pad0">
+                            <a href="#">
+                                <img src="/tadeas_theme/static/src/img/offer_banner_2.jpg"
+                                     alt=""/>
+                            </a>
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="offer-banner-below row">
+
+
+                        <div class="offer-banner-3 pad0 col-sm-4">
+                            <a href="#">
+                                <img src="/tadeas_theme/static/src/img/offer_banner_3.jpg"
+                                     alt=""/>
+                            </a>
+                        </div>
+
+
+                        <div class="offer-banner-4 pad0 col-sm-4">
+                            <a href="#">
+                                <img src="/tadeas_theme/static/src/img/offer_banner_4.jpg"
+                                     alt=""/>
+                            </a>
+                        </div>
+
+
+                        <div class="offer-banner-5 pad0 col-sm-4">
+                            <a href="#">
+                                <img src="/tadeas_theme/static/src/img/offer_banner_5.jpg"
+                                     alt=""/>
+                            </a>
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <section class="snippet_product_carousel mb32 mt32 text-center theme-carousel">
+            <div class="container">
+                <div class="js_get_objects product_carousel_design"
+                     data-product_view="website_product_carousel.list_of_product_view"
+                     data-objects_in_slide="5" data-objects_limit="10"/>
+            </div>
+        </section>
+        <div class="oe_structure oe_empty"/>
+        <section class="s_brand_carousel mt48 mb48">
+            <div class="container">
+                <t t-call="website_product_brand.brand_slider_content"/>
+            </div>
+        </section>
+        <div class="oe_structure oe_empty"/>
+    </template>
+</odoo>

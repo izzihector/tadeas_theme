@@ -1,0 +1,77 @@
+<odoo>
+    <template id="s_services" name="Our Service">
+        <section class="mt64 mb64">
+            <div class="container">
+                <div class="product-title text-center mb64">
+                    <h2 claa="mt8 mb8">
+                        <span class="bg-white">Our Services</span>
+                    </h2>
+                </div>
+
+                <div class="row">
+
+                    <div class="col-md-4 col-sm-6">
+                        <div class="serviceBox">
+                            <div class="service-icon">
+                                <i class="fa fa-globe"></i>
+                            </div>
+                            <div class="service-content">
+                                <h3>
+                                    <a href="#">Web Development</a>
+                                </h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ac lacus
+                                    cursus, blandit dolor quis, blandit velit. Curabitur aliquet ante
+                                    vel pulvinar finibus. Pellentesque.
+                                </p>
+                            </div>
+                            <div class="read">
+                                <a href="#" class="btn btn-default">Read more</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-6">
+                        <div class="serviceBox">
+                            <div class="service-icon">
+                                <i class="fa fa-rocket"></i>
+                            </div>
+                            <div class="service-content">
+                                <h3>
+                                    <a href="#">Brand Building</a>
+                                </h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ac lacus
+                                    cursus, blandit dolor quis, blandit velit. Curabitur aliquet ante
+                                    vel pulvinar finibus. Pellentesque.
+                                </p>
+                            </div>
+                            <div class="read">
+                                <a href="#" class="btn btn-default">Read more</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-6">
+                        <div class="serviceBox">
+                            <div class="service-icon">
+                                <i class="fa fa-user-md"></i>
+                            </div>
+                            <div class="service-content">
+                                <h3>
+                                    <a href="#">Responsive Design</a>
+                                </h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ac lacus
+                                    cursus, blandit dolor quis, blandit velit. Curabitur aliquet ante
+                                    vel pulvinar finibus. Pellentesque.
+                                </p>
+                            </div>
+                            <div class="read">
+                                <a href="#" class="btn btn-default">Read more</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+
+</odoo>

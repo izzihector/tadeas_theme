@@ -1,0 +1,68 @@
+<odoo>
+    <template id="snippet_brand_carousel" inherit_id="website.snippets">
+        <xpath expr="//div[@id='snippet_feature']/div[hasclass('o_panel_body')]" position="inside">
+            <t t-snippet="website_product_brand.product_brand_snippet"
+               t-thumbnail="/website_product_brand/static/src/imgs/icon_s.png"/>
+        </xpath>
+    </template>
+
+    <template id="assets_frontend" inherit_id="website.assets_frontend">
+        <xpath expr="." position="inside">
+            <script type="text/javascript" src="/website_product_brand/static/src/js/clear_filter.js"/>
+            <script type="text/javascript"
+                    src="/website_product_brand/static/src/js/website.front.js"/>
+            <link href="/website_product_brand/static/src/scss/brand_template.scss"
+                  rel="stylesheet" type="text/css"/>
+        </xpath>
+    </template>
+    <template id="assets_editor" inherit_id="website.assets_editor" name="Editor assets">
+        <xpath expr="." position="inside">
+            <script type="text/javascript"
+                    src="/website_product_brand/static/src/js/brand_carousel_editor.js"/>
+        </xpath>
+    </template>
+
+    <template id="s_brand_carousel_options" name="Brand Carousel Snippet Options"
+              inherit_id="website.snippet_options">
+        <xpath expr="." position="inside">
+            <div data-js='js_get_brand_in_slide' data-selector=".s_brand_carousel">
+                <we-collapse-area>
+                    <we-toggler>
+                        <i class="fa fa-folder-open"/>
+                        Brand Limit Per Slide
+                    </we-toggler>
+                    <we-collapse>
+                        <we-button data-brand_objects_in_slide="1">1</we-button>
+                        <we-button data-brand_objects_in_slide="2">2</we-button>
+                        <we-button data-brand_objects_in_slide="3">3</we-button>
+                        <we-button data-brand_objects_in_slide="4">4</we-button>
+                        <we-button data-brand_objects_in_slide="5">5</we-button>
+                    </we-collapse>
+                </we-collapse-area>
+            </div>
+            <div data-js='js_brand_limit' data-selector=".s_brand_carousel">
+                <we-collapse-area>
+                    <we-toggler>
+                        <i class="fa fa-folder-open"/>
+                        Brand Limits
+                    </we-toggler>
+                    <we-collapse data-no-preview="true">
+                        <we-button data-brand_objects_limit="">All Objects</we-button>
+                        <we-button data-brand_objects_limit="1">1</we-button>
+                        <we-button data-brand_objects_limit="2">2</we-button>
+                        <we-button data-brand_objects_limit="4">4</we-button>
+                        <we-button data-brand_objects_limit="6">6</we-button>
+                        <we-button data-brand_objects_limit="8">8</we-button>
+                        <we-button data-brand_objects_limit="10">10</we-button>
+                        <we-button data-brand_objects_limit="12">12</we-button>
+                        <we-button data-brand_objects_limit="15">15</we-button>
+                    </we-collapse>
+                </we-collapse-area>
+            </div>
+            <div data-selector=".s_brand_carousel">
+                <we-button data-toggle-class="headline_off"><i class="fa fa-eye-slash"/>Hide Headline
+                </we-button>
+            </div>
+        </xpath>
+    </template>
+</odoo>

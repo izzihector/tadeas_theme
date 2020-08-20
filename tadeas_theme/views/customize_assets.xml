@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <!-- ==================================== LESS ================================= -->
+    <template id="frontend_website_style_customize" name="Frontend Website Style"
+              inherit_id="website.assets_frontend" active="True">
+        <xpath expr="." position="inside">
+            <link href="/tadeas_theme/static/src/scss/theme_common.scss"
+                  type="text/scss" rel="stylesheet"/>
+            <link href="/tadeas_theme/static/src/scss/layouts/header_lighter.scss" rel="stylesheet"
+                  type="text/scss"/>
+            <link href="/tadeas_theme/static/src/scss/layouts/footer_default.scss" rel="stylesheet"
+                  type="text/scss"/>
+        </xpath>
+    </template>
+</odoo>

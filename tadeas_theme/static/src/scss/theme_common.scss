@@ -1,0 +1,50 @@
+.pad0{
+    padding:0px;
+}
+/*------------------------- Container Media Query ----------------------------------*/
+
+
+.container{
+     margin-right: auto;
+     margin-left: auto;
+     padding-left: 10px;
+     padding-right: 10px;
+}
+.container:before{
+     content: " ";
+     display: table;
+}
+ .container:after{
+     clear: both;
+}
+ @media (min-width: 768px) {
+     .container{
+         max-width: 760px;
+    }
+}
+ @media (min-width: 992px) {
+     .container{
+         max-width: 980px;
+    }
+}
+ @media (min-width: 1200px) {
+     .container{
+         max-width: 1200px;
+    }
+}
+.navbar-brand.logo{
+    margin-top:15px;
+}
+.o_connected_user header .navbar-fixed-top{
+    margin-top: 34px;
+}
+
+
+
+/*------------------------- Container Media Query ----------------------------------*/
+
+@media (min-width: 1400px) {
+     .container{
+         max-width: 1440px;
+    }
+}

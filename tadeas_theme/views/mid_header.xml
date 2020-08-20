@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template id="top_mid_header" inherit_id="website.layout"
+              name="Header Layout Menu"
+              active="True" customize_show="False">
+        <xpath expr="//header//nav" position="before">
+            <div id="mid-header-user-details" class="bg-primary">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 col-8 col-sm-3 oe_structure mt8"
+                             id="header-top-left">
+                            <div class="row">
+                                <div class="col-md-2 pad0 col-5 col-sm-5 text-center">
+                                    <div class="form-language hed-drop">
+                                        <ul id="lang"
+                                            class="list-inline dropdown mb-0">
+                                            <li class="list-inline-item">
+                                                <div class="">
+                                                    <button class="btn btn-sm btn-secondary dropdown-toggle"
+                                                            type="button" data-toggle="dropdown" aria-haspopup="true"
+                                                            aria-expanded="true">
+                                                        <span t-esc="list(filter(lambda lg : lg[0] == lang, languages))[0][2].split('/').pop()"/>
+                                                        <span class="caret ml4"/>
+                                                    </button>
+                                                    <div class="dropdown-menu" role="menu">
+                                                        <t t-foreach="languages" t-as="lg">
+                                                            <a t-att-href="url_for(request.httprequest.path + '?' + keep_query(), lang_code=lg[0])"
+                                                               class="dropdown-item js_change_lang"
+                                                               t-att-data-url_code="lg[1]">
+                                                                <t t-esc="lg[2].split('/').pop()"/>
+                                                            </a>
+                                                        </t>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+                                <div class="pricelist_lst col-md-4 col-7 col-sm-7">
+                                    <t t-if="website.user_id == user_id" t-call="website_sale.pricelist_list"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-4 col-sm-9 oe_structure"
+                             id="header-top-right">
+                            <div class="d-md-none d-lg-none d-sm-none pad0 text-right col-12">
+                                <div class="dropdown">
+                                    <a href="#" class="btn-link text-white dropdown-toggle" data-toggle="dropdown">
+                                        My Account
+                                        <span class="caret"></span>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <t t-if="website.user_id == user_id">
+                                            <li class="nav-item">
+                                                <a href="/web/login" role="menuitem" class="nav-link">
+                                                    Sign In
+                                                </a>
+
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="/web/signup" role="menuitem" class="nav-link">
+                                                    Sign Up
+                                                </a>
+                                            </li>
+                                        </t>
+                                        <t t-if="website.user_id != user_id">
+                                            <li class="my_account nav-item">
+                                                <a t-attf-href="/my/home" role="menuitem" data-toggle="tooltip"
+                                                   title="My Account" class="my_acc text-white nav-link">
+                                                    <span t-esc="(len(user_id.name)&gt;20) and (user_id.name[:17]+'...') or user_id.name"/>
+                                                </a>
+                                            </li>
+                                            <li class="user_logout nav-item">
+                                                <a t-attf-href="/web/session/logout?redirect=/" role="menuitem"
+                                                   data-toggle="tooltip" title="Sign Out" class="text-black nav-link">
+                                                    Logout
+                                                </a>
+                                            </li>
+                                        </t>
+
+                                    </ul>
+                                </div>
+
+                            </div>
+                            <ul class="right-links d-none d-sm-block pull-right">
+                                <t t-if="website.user_id != user_id">
+                                    <li class="first nav-item">
+                                        <a t-attf-href="/my/home" role="menuitem" data-toggle="tooltip"
+                                           title="My Account" class="my_acc text-black nav-link">
+                                            <i class="fa fa-user"></i>
+                                            <span t-esc="(len(user_id.name)&gt;20) and (user_id.name[:17]+'...') or user_id.name"/>
+                                        </a>
+                                    </li>
+                                </t>
+                                <li id="my_wish nav-item">
+                                    <a href="/shop/wishlist" class="nav-link o_wsale_my_wish">
+                                        <i class="fa fa-heart-o"></i>
+                                        My Wishlist
+                                        <sup class="my_wish_quantity o_animate_blink label label-primary">
+                                            <span t-esc='wishcount'>0</span>
+                                        </sup>
+                                    </a>
+
+                                </li>
+                                <li class="nav-item">
+                                    <a class="js_theme_checkout_basket nav-link" href="/shop/cart">
+                                        <i class="fa fa-check-square-o"/>
+                                        Cart
+                                    </a>
+                                </li>
+                                <t t-if="website.user_id == user_id">
+                                    <li class="my_sing_up nav-item">
+                                    </li>
+                                    <li class="my_sing_in nav-item">
+                                    </li>
+                                </t>
+                                <t t-if="website.user_id != user_id">
+                                    <li class="nav-item">
+                                        <a t-attf-href="/web/session/logout?redirect=/" role="menuitem"
+                                           data-toggle="tooltip" title="Sign Out" class="text-black nav-link">
+                                            <i class="fa fa-sign-out"/>
+                                            Logout
+                                        </a>
+                                    </li>
+                                </t>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </xpath>
+
+        <xpath expr="//header//nav" position="before">
+            <section class="header-second-section bg-primary">
+                <div class="container">
+                    <div id="mid-header-user-search" class="mb24">
+                        <div class="row">
+                            <div class="col-sm-3  col-md-3  col-12 logo mt16">
+                                <a href="/">
+                                    <img class="img img-fluid mobile-logo"
+                                         src="/tadeas_theme/static/src/img/logo.png"/>
+                                </a>
+                            </div>
+                            <div class="col-sm-6 col-md-6 col-12 mt8 mb8">
+                                <div>
+                                    <input type="hidden" name="search_param" value="all"
+                                           id="search_param"/>
+                                    <t t-if="category">
+                                        <form t-att-action="keep('/shop'+ ('/category/'+slug(category)) if category else '', search=0)"
+                                              method="get"
+                                              class="search_class form-search content">
+
+                                            <t t-if="attrib_values">
+                                                <t t-foreach="attrib_values"
+                                                   t-as="a">
+                                                    <input type="hidden"
+                                                           name="attrib"
+                                                           t-att-value="'%s-%s' % (a[0], a[1])"/>
+                                                </t>
+                                            </t>
+                                            <div class="oe_search search_block_top_form">
+                                                <input type="text" name="search"
+                                                       class="search-query form-control oe_search_box search_query ac_input"
+                                                       placeholder="Search entire store here ..."
+                                                       t-att-value="search"/>
+                                                <button type="submit"
+                                                        class="btn oe_search_button btn-link button-search button">
+                                                    <i class="fa fa-search"/>
+                                                </button>
+                                            </div>
+                                        </form>
+                                    </t>
+                                    <t t-if="not category">
+                                        <form action="/shop" method="get" id="searchbox"
+                                              class="search_class form-search content">
+
+                                            <t t-if="attrib_values">
+                                                <t t-foreach="attrib_values"
+                                                   t-as="a">
+                                                    <input type="hidden"
+                                                           name="attrib"
+                                                           t-att-value="'%s-%s' % (a[0], a[1])"/>
+                                                </t>
+                                            </t>
+                                            <div class="oe_search search_block_top_form">
+                                                <input type="text" name="search"
+                                                       class="search-query form-control oe_search_box search_query ac_input"
+                                                       placeholder="Search entire store here ..."
+                                                       t-att-value="search"/>
+                                                <button type="submit"
+                                                        class="btn oe_search_button btn-link button-search button">
+                                                    <i class="fa fa-search"/>
+                                                </button>
+
+                                            </div>
+                                            <span class="input-group-btn">
+                                            </span>
+                                        </form>
+                                    </t>
+                                </div>
+
+                            </div>
+                            <div class="col-sm-3 col-md-3 col-12 mt8 mb8">
+                                <div class="row">
+                                    <div class="col-sm-8 col-md-8 col-8">
+                                        <div class="header-contact">
+                                            <i class="fa fa-phone"></i>
+                                            <span>CALL US NOW
+                                                <br/>
+                                                <b class="text-white mt8">+123 5678 890</b>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-2 col-md-2 col-2 pad0 ml32 mt8 ">
+                                        <t t-set="website_sale_order" t-value="website.sale_get_order()"/>
+                                        <t t-att-class="'' if website_sale_order and website_sale_order.cart_quantity else ''">
+                                            <a href="/shop/cart" class="header_shopping_cart basket_popover mt4"
+                                               data-toggle="tooltip" title="My Cart" style="color:#fff;">
+                                                <i class="fa fa-shopping-cart fa-2x "/>
+                                                <sup t-if="website_sale_order and website_sale_order.cart_quantity"
+                                                     t-attf-class="my_cart_quantity label label-primary"
+                                                     t-esc="website_sale_order and website_sale_order.cart_quantity or '0'"/>
+                                            </a>
+                                        </t>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </xpath>
+    </template>
+
+    <template id="website_sign_in_top_header" inherit_id="tadeas_theme.top_mid_header"
+              name="Show Sign In" active="True" customize_show="True">
+        <xpath expr="//li[hasclass('my_sing_in')]" position="inside">
+            <a href="/web/login" role="menuitem" class="nav-link">
+                <i class="fa fa-key"></i>
+                Sign In
+            </a>
+        </xpath>
+    </template>
+    <template id="website_sign_up_top_header" inherit_id="tadeas_theme.top_mid_header"
+              name="Show Sign Up" active="True" customize_show="True">
+        <xpath expr="//li[hasclass('my_sing_up')]" position="inside">
+            <a href="/web/signup" role="menuitem" class="nav-link">
+                <i class="fa fa-key"></i>
+                Sign Up
+            </a>
+        </xpath>
+    </template>
+    <template id="pricelist_list_inherit" inherit_id="website_sale.pricelist_list" name="Pricelists Dropdown">
+        <xpath expr="//a[hasclass('dropdown-toggle')]" position="attributes">
+            <attribute name="class">dropdown-toggle btn-link text-white</attribute>
+        </xpath>
+    </template>
+    <template id="portal.my_account_link" inherit_id="website.layout">
+    </template>
+
+    <template id="frontend_layout" inherit_id="portal.frontend_layout">
+        <xpath expr="//ul[@id='top_menu']/li[hasclass('divider')]" position="replace"/>
+        <xpath expr="//ul[@id='top_menu']/li[hasclass('dropdown')]" position="replace"/>
+        <xpath expr="//ul[@id='top_menu']" position="attributes">
+            <attribute name="class">nav navbar-nav navbar-left</attribute>
+        </xpath>
+    </template>
+
+    <template id="portal.portal_show_sign_in" customize_show="False" active="False" inherit_id="website.layout"/>
+
+    <template id="website.layout_logo_show" inherit_id="website.layout" customize_show="False" active="False"/>
+    <template id="layout_logo_show" inherit_id="website.layout" customize_show="True" name="Show Logo">
+        <xpath expr="//header//a[hasclass('navbar-brand')]" position="replace">
+        </xpath>
+    </template>
+    <template id="website_sale.cart_popover" name="Cart Popover">
+        <div t-if="not website_sale_order or not website_sale_order.website_order_line" class="alert alert-info">
+            Your cart is empty!
+        </div>
+        <t t-if="website_sale_order and website_sale_order.website_order_line">
+            <div class="owl-carousel owl-theme popover-cart-carousel">
+                <t t-foreach="website_sale_order.website_order_line" t-as="line">
+                    <div class="row mb8 cart_line">
+                        <div class="col-3">
+                            <span t-field="line.product_id.image_small"
+                                  t-options="{'widget': 'image', 'class': 'rounded'}"/>
+                        </div>
+                        <div class="col-9">
+                            <div>
+                                <t t-call="website_sale.cart_line_product_link">
+                                    <span class="h6" t-esc="line.name_short"/>
+                                </t>
+                            </div>
+                            Qty:
+                            <t t-esc="int(line.product_uom_qty) == line.product_uom_qty and int(line.product_uom_qty) or line.product_uom_qty"/>
+
+                            <br/>
+                            <a class="popover_remove_product mb24" title="Remove Item"
+                               t-att-data-product_id="line.product_id.id"
+                               t-att-data-line_id="line.id">
+                                Remove Item
+                            </a>
+                        </div>
+                    </div>
+                </t>
+            </div>
+            <div class="text-center">
+                <span class="h6">
+                    <t t-call="website_sale.total">
+                        <t t-set='hide_coupon'>True</t>
+                    </t>
+                </span>
+                <div class="row">
+                    <form action="/shop/checkout" method="POST" class='hide' id="checkout_theme_form">
+                        <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                        <input type="hidden" name="partner_id" t-att-value="values_cart['order'].partner_id.id"/>
+                    </form>
+                    <div class="checkout col-md-4 mb24">
+                        <a class="btn btn-success text-white js_theme_checkout_basket">
+                            Checkout
+                        </a>
+                    </div>
+                    <div class="checkout col-md-8 mb24">
+                        <a role="button" class="btn btn-primary" href="/shop/cart">
+                            View Cart (
+                            <t t-esc="website_sale_order.cart_quantity"/>
+                            items)
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+    <template id="website.affix_top_menu" inherit_id="website.layout" customize_show="False" active="False"
+              name="Affix Top Menu">
+        <xpath expr="//header" position="attributes">
+            <attribute name="t-attf-class" add="#{'o_affix_enabled'}" separator=" "/>
+        </xpath>
+    </template>
+
+</odoo>

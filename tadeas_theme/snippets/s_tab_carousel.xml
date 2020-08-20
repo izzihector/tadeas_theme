@@ -1,0 +1,64 @@
+<odoo>
+    <template id="s_tab_carousel" name="Tab Carousel">
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="tab" role="tabpanel">
+                        <!-- Nav tabs -->
+                        <ul class="nav nav-tabs justify-content-center" role="tablist">
+                            <li role="presentation" class="nav-item">
+                                <a href="#Section1" class="show active nav-link" aria-controls="home" role="tab"
+                                   data-toggle="tab">
+                                    <span>
+                                        <i class="fa fa-globe"></i>
+                                    </span>
+                                    FEATURED PRODUCTS
+                                </a>
+                            </li>
+                            <li role="presentation" class="nav-item">
+                                <a href="#Section2" class="nav-link " aria-controls="profile" role="tab"
+                                   data-toggle="tab">
+                                    <span>
+                                        <i class="fa fa-rocket"></i>
+                                    </span>
+                                    LATEST PRODUCTS
+                                </a>
+                            </li>
+                            <li role="presentation" class="nav-item">
+                                <a href="#Section3" class="nav-link " aria-controls="messages" role="tab"
+                                   data-toggle="tab">
+                                    <span>
+                                        <i class="fa fa-briefcase"></i>
+                                    </span>
+                                    BEST SELLING
+                                </a>
+                            </li>
+                        </ul>
+                        <!-- Tab panes -->
+                        <div class="tab-content tabs">
+                            <div role="tabpanel" class="tab-pane active" id="Section1">
+                                <div class="js_get_objects product_carousel_design headline_off text-center"
+                                     data-product_view="website_product_carousel.list_of_product_view"
+                                     data-objects_in_slide="5" data-objects_limit="10"/>
+
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="Section2">
+                                <div class="js_get_objects product_carousel_design headline_off text-center"
+                                     data-product_view="website_product_carousel.list_of_product_view"
+                                     data-objects_in_slide="5" data-objects_limit="10"/>
+
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="Section3">
+                                <div class="js_get_objects product_carousel_design headline_off text-center"
+                                     data-product_view="website_product_carousel.list_of_product_view"
+                                     data-objects_in_slide="5" data-objects_limit="10"/>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+
+</odoo>

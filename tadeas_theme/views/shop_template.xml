@@ -1,0 +1,303 @@
+<odoo>
+
+    <template id="products_item_extended" inherit_id="website_sale.products_item">
+        <xpath expr="//div[hasclass('o_wsale_product_information')]" position="before">
+            <span t-if="product.name_ribbon" class="hot-sale">
+                <t t-esc="product.name_ribbon"/>
+            </span>
+        </xpath>
+    </template>
+    <template id="shop_view_top" inherit_id="website_sale.products" name="Shop">
+        <xpath expr="//div[hasclass('container', 'oe_website_sale')]" position="before">
+            <t t-call="tadeas_theme.products_breadcrumb"/>
+        </xpath>
+    </template>
+
+    <template id="shop_template_changes" inherit_id="website_sale.products" name="Shop">
+        <xpath expr="//div[hasclass('products_pager')]" position="replace">
+        </xpath>
+        <xpath expr="//div[@id='products_grid']//table" position="before">
+            <div class="row">
+                <div class="col-md-7 col-sm-7 mb24 col-12">
+                    <div class="col-md-12 col-12 col-sm-12">
+                        <t t-call="tadeas_theme.shop_pagination"/>
+                    </div>
+                </div>
+                <div class="col-md-5 col-12 col-sm-3 mb24">
+                    <div class="row">
+                        <div class="col-md-7 col-6 col-sm-7 view-switcher-option">
+                            <div class="view-mode">
+                                <button class="switch_grid_view btn btn-primary btn-md disabled" title="Grid View"
+                                        alt="Grid View" style="border: 1px solid;">
+                                    <i class="fa fa-th"/>
+                                </button>
+                                <button class="switch_list_view btn btn-primary btn-md" title="List View"
+                                        alt="List View" style="border: 1px solid;">
+                                    <i class="fa fa-th-list"/>
+                                </button>
+                            </div>
+
+                        </div>
+                        <div class="col-md-5 col-6 col-sm-5 sort-by-option">
+                            <t t-set="list_price_desc_label">Catalog price: High to Low</t>
+                            <t t-set="list_price_asc_label">Catalog price: Low to High</t>
+                            <t t-set="name_asc_label">Name: A to Z</t>
+                            <t t-set="name_desc_label">Name: Z to A</t>
+                            <t t-set="website_sale_sortable" t-value="[
+                (list_price_desc_label, 'list_price desc'),
+                (list_price_asc_label, 'list_price asc'),
+                (name_asc_label, 'name asc'),
+                (name_desc_label, 'name desc')
+            ]"/>
+                            <t t-set="website_sale_sortable_current"
+                               t-value="[sort for sort in website_sale_sortable if sort[1]==request.params.get('order', '')]"/>
+                            <div class="dropdown mt-2 ml-md-2 dropdown_sorty_by">
+                                <a role="button" href="#" class="dropdown-toggle btn btn-secondary"
+                                   data-toggle="dropdown">
+                                    <span class="d-none d-lg-inline">
+                                        <t t-if='len(website_sale_sortable_current)'>
+                                            Sorting by :
+                                            <t t-raw='website_sale_sortable_current[0][0]'/>
+                                        </t>
+                                        <t t-else='1'>
+                                            Sort by
+                                        </t>
+                                    </span>
+                                    <i class="fa fa-sort-amount-asc d-lg-none"/>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right" role="menu">
+                                    <t t-foreach="website_sale_sortable" t-as="sortby">
+                                        <a role="menuitem" rel="noindex,nofollow"
+                                           t-att-href="keep('/shop', order=sortby[1])" class="dropdown-item">
+                                            <span t-raw="sortby[0]"/>
+                                        </a>
+                                    </t>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-list grid-view-items">
+                <div class="row">
+                    <t t-if="products">
+                        <t t-foreach="products" t-as="product">
+                            <div class="col-md-4 col-sm-6 single-product-view col-6">
+                                <t t-call="website_sale.products_item"/>
+                            </div>
+                        </t>
+                    </t>
+                </div>
+            </div>
+        </xpath>
+        <xpath expr="//div[@id='products_grid']//table" position="replace">
+            <table></table>
+        </xpath>
+    </template>
+    <template id="back_hover_image_product_item_inherit" inherit_id="website_sale.products_item"
+              name="Product Back Hover Image">
+        <xpath expr="//div[hasclass('oe_product_image')]" position="replace">
+            <div class="card-body p-1 oe_product_image">
+                <a t-att-href="product_href" itemprop="url"
+                   t-att-class="'main_img d-block h-100' if product.product_template_image_ids else 'd-block h-100'">
+                    <span t-field="product.image_1920"
+                          t-options="{'widget': 'image', 'preview_image': 'image_1024' if product_image_big else 'image_256'}"
+                          class="d-flex h-100 justify-content-center align-items-center"/>
+                </a>
+                <a t-att-href="product_href" class="hover_img" itemprop="url" t-if="product.product_template_image_ids">
+                    <span t-field="product.product_template_image_ids[0]image_1920"
+                          t-options="{'widget': 'image', 'preview_image': 'image_1024' if product_image_big else 'image_256'}"
+                          class="d-flex h-100 justify-content-center align-items-center"/>
+                </a>
+            </div>
+        </xpath>
+    </template>
+
+        <template id="product_pagination_view" name="Pager">
+            <t t-set="number_end"
+               t-value="pager['page']['num'] * ppg"/>
+            <span>PRODUCTS
+                <t t-if="pager['page']['num'] > 1">
+                    <t t-set="number_start"
+                       t-value="1 + (number_end - ppg)"/>
+                    <t t-esc="number_start"/>
+                </t>
+                <t t-if="pager['page']['num'] == 1">
+                    1
+                </t>
+                -
+                <t t-if="search_count &lt;= number_end">
+                    <t t-esc="search_count"/>
+                </t>
+                <t t-if="search_count &gt; number_end">
+                    <t t-esc="number_end"/>
+                </t>
+                OF
+                <t t-esc="search_count"/>
+            </span>
+        </template>
+
+
+    <!--breadcrumb -->
+    <template id="products_breadcrumb" name="Breadcrumb">
+        <section class="products_breadcrumb mb24 mt24">
+            <div class="container" style="position: relative;">
+                <div class="row">
+                    <div class="col-md-8 col-sm-8 col-12">
+                        <ol class="breadcrumb mt8 mb8 pad0 bg-white" t-if="not category">
+                            <li class="breadcrumb-item">
+                                <a href="/">
+                                    <i class="fa fa-home text-black"/>
+                                </a>
+                            </li>
+                            <li class="breadcrumb-item">
+                                <a href="/shop">
+                                    Shop
+                                </a>
+                            </li>
+                        </ol>
+                        <ol class="breadcrumb mt24 mb24" t-if="category">
+                            <li class="breadcrumb-item">
+                                <a href="/">
+                                    <i class="fa fa-home text-white"/>
+                                </a>
+                            </li>
+                            <li class="breadcrumb-item">
+                                <a href="/shop">
+                                    Shop
+                                </a>
+                            </li>
+                            <t t-if="category">
+                                <t t-if="category.parent_id"
+                                   t-call="tadeas_theme.sub_category"/>
+                                <li class="breadcrumb-item">
+                                    <span t-field="category.name"/>
+                                </li>
+
+                            </t>
+                        </ol>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-12 mt8 text-right">
+                        <!--                        <t t-call="tadeas_theme.product_pagination_view"/>-->
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </template>
+
+    <template id="sub_category" name="Category Parent">
+        <t t-set="category" t-value="category.parent_id"/>
+        <t t-if="category.parent_id">
+            <t t-call="tadeas_theme.sub_category"></t>
+        </t>
+        <li class="text-white">
+            <a t-att-href="keep('/shop/category/%s' % slug(category), category=0)"
+               t-field="category.name"/>
+        </li>
+    </template>
+
+
+    <template id="shop_pagination" name="Pagination">
+        <ul t-if="pager['page_count'] > 1"
+            t-attf-class="#{ classname or '' } pagination"
+            t-att-style="style or None">
+            <li t-att-class=" 'disabled hidden-prev page-item ' if pager['page']['num'] == 1 else 'page-item' ">
+                <a t-att-href="pager['page_start']['url']" class="page-link">
+                    Last
+                </a>
+            </li>
+            <li t-att-class=" 'disabled hidden-prev page-item ' if pager['page']['num'] == 1 else 'page-item ' ">
+                <a t-att-href=" pager['page_previous']['url'] if pager['page']['num'] != 1 else None" class="page-link">
+                    Prev
+                </a>
+            </li>
+            <t t-set="last_page_count"
+               t-value="0"/>
+            <t t-foreach="pager['pages']"
+               t-as="page">
+                <li t-att-class=" 'active page-item ' if page['num'] == pager['page']['num'] else 'page-item' ">
+                    <a t-att-href="page['url']"
+                       t-raw="page['num']" class="page-link"/>
+                    <t t-set="last_page_count"
+                       t-value="page['num']"/>
+                </li>
+            </t>
+            <li t-att-class=" 'disabled page-item' if pager['page']['num'] == pager['page_count'] else 'page-item' ">
+                <a t-att-href="pager['page_next']['url'] if pager['page']['num'] != pager['page_count'] else None"
+                   class="page-link">
+                    Next
+                </a>
+            </li>
+            <li t-att-class=" 'disabled page-item' if pager['page']['num'] == pager['page_count'] else 'page-item' ">
+                <a t-att-href="pager['page_end']['url']" class="page-link">
+                    End
+                </a>
+            </li>
+
+        </ul>
+
+    </template>
+    <template id="website_sale.products_add_to_cart" inherit_id="website_sale.products_item" active="True"
+              customize_show="True"
+              name="Add to Cart">
+        <xpath expr="//div[hasclass('product_price')]" position="inside">
+            <div class="add-to-cart-shop mt16 o_wsale_product_btn">
+                <t t-set="product_variant_id" t-value="product._get_first_possible_variant_id()"/>
+                <input name="product_id" t-att-value="product_variant_id" type="hidden"/>
+                <t t-if="product_variant_id">
+                    <a href="#" role="button" class="btn btn-primary a-submit" aria-label="Shopping cart"
+                       title="Shopping cart">
+                        Add to Cart
+                    </a>
+                </t>
+            </div>
+        </xpath>
+    </template>
+
+    <template inherit_id="website_sale.products_item" id="products_item_inherit_details" name="Products item">
+        <xpath expr="//div[hasclass('o_wsale_product_information')]" position="attributes">
+            <attribute name="class">product-details-section text-center card-body p-0</attribute>
+        </xpath>
+        <xpath expr="//div[hasclass('add-to-cart-shop')]" position="before">
+            <div class="shop_rating mt16">
+                <t t-if="rating_product">
+                    <div class="o_rating_star_card">
+                        <t t-set="val_integer"
+                           t-value="round(rating_product[product.id].get('avg'))"/>
+                        <t t-set="val_decimal" t-value="val_integer - rating_product[product.id].get('avg')"/>
+                        <t t-set="empty_star"
+                           t-value="5 - val_integer"/>
+                        <div class="o_website_rating_static">
+                            <t t-foreach="range(0,val_integer)"
+                               t-as="num">
+                                <i class="fa fa-star"/>
+                            </t>
+                            <t t-if="val_decimal">
+                                <i class="fa fa-star-half-o"/>
+                            </t>
+                            <t t-foreach="range(0,empty_star)" t-as="num">
+                                <i class="fa fa-star-o"/>
+                            </t>
+                        </div>
+                    </div>
+
+                </t>
+            </div>
+        </xpath>
+    </template>
+
+    <template id="website_sale.products_list_view" inherit_id="website_sale.products" active="False"
+              customize_show="False" name="List View">
+    </template>
+
+    <template id="class_attrib_filter" inherit_id="website_sale.products_attributes">
+        <xpath expr="//div" position="attributes">
+            <attribute name="class">attribute_style</attribute>
+        </xpath>
+    </template>
+
+</odoo>

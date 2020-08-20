@@ -1,0 +1,41 @@
+.theme-cart-view{
+    border:1px solid #ccc;
+    thead{
+        th{
+            padding:22px !important;
+            border:1px solid #ccc;
+        }
+    }
+    tbody{
+        td{
+            border:1px solid #ccc;
+            vertical-align: middle !important;
+        }
+    }
+}
+.oe_cart{
+    .btn{
+        border-radius: 0;
+    }
+}
+.o_website_sale_rightfit{
+    .js_cart_lines.row{
+        margin:32px 0;
+    }
+    .btn{
+        padding: 12px;
+    }
+    #cart_total{
+        #order_total{
+            span{
+                font-size: 28px;
+                font-weight: bold;
+                padding: 14px 0;
+            }
+        }
+    }
+}
+.mycart-popover {
+    max-width: 300px;
+    min-width: 150px;
+}

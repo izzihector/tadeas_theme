@@ -1,0 +1,106 @@
+#footer {
+    background-color: #272723;
+    background-repeat: repeat;
+    background-attachment: scroll;
+    font-size: .9em;
+    padding: 0;
+    position: relative;
+    clear: both;
+    color: #a8a8a8;
+}
+#footer .footer-ribbon {
+    background: #08c;
+    font-family: Shadows Into Light;
+    font-weight: bold;
+    position: absolute;
+    margin: -70px 0 0 0;
+    padding: 10px 20px 6px 20px;
+    color: #fff;
+    font-size: 1.6em;
+    z-index: 101;
+    text-transform: capitalize;
+}
+#footer .footer-ribbon:before {
+    right: 100%;
+    border-right: 10px solid #646464;
+    border-top: 16px solid transparent;
+    content: "";
+    display: block;
+    height: 0;
+    position: absolute;
+    top: 0;
+    width: 7px;
+}
+#footer .footer-ribbon:before {
+    border-right-color: #005580;
+}
+.widget {
+    margin-bottom: 30px;
+    margin-top: 0px;
+}
+#footer .widget.contact-info .widget-title {
+    margin-bottom: 15px;
+}
+#footer .widgettitle, #footer .widget-title {
+    font-size: 16px;
+    font-weight: 700;
+    color:white;
+}
+.widget.contact-info ul, .widget.contact-info li {
+    border-width: 0;
+    margin: 0;
+    padding: 0;
+}
+#footer .widget>div>ul, #footer .widget>ul {
+    font-size: 1em;
+}
+#footer .widget>div>ul li, #footer .widget>ul li {
+    border-color: rgba(168,168,168,.3);
+        color: #a8a8a8;
+    line-height: 24px;
+}
+.widget.contact-info li:not(:last-child) {
+    margin-bottom: 10px!important;
+}
+
+.widget.contact-info ul, .widget.contact-info li {
+    border-width: 0;
+    margin: 0;
+    padding: 0;
+}
+.widget.contact-info i {
+    float: left;
+    text-align: center;
+    width: 16px;
+    top: -2px;
+    margin: 4px 9px 10px 0;
+    font-size: 1.2em;
+    position: static!important;
+}
+#footer .widget.contact-info .contact-details strong {
+    color: #ffffff;
+}
+
+#footer .widget.contact-info .contact-details strong {
+    font-weight: 400;
+}
+
+.widget.contact-info .contact-info-block .contact-details strong {
+    display: block;
+    padding-left: 25px;
+}
+.widget.contact-info .contact-info-block .contact-details span {
+    display: block;
+    padding-left: 25px;
+}
+.footer-top{
+    padding:54px;
+}
+.vc_column_container{
+    li {
+        line-height: 24px;
+        a{
+            color: #a8a8a8;
+        }
+    }
+}

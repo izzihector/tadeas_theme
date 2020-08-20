@@ -1,0 +1,166 @@
+<odoo>
+    <template id="s_theme_banner" name="Theme banner">
+        <section class="mt32 mb32">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 d-none d-sm-block col-lg-3 col-sm-3">
+                        <div class="porto-links-block wpb_content_element  m-b-none background-color-light">
+                            <div class="links-title">Top Categories</div>
+                            <div class="links-content">
+                                <ul class="nav navbar-nav">
+                                    <t t-set="categories"
+                                       t-value="website.get_search_categories() if website else None"/>
+                                    <t t-if="categories">
+                                        <t t-foreach="categories['categories']" t-as="categ">
+                                            <li class="porto-links-item nav-item">
+                                                <a t-att-href="'/shop/category/%s' % (categ.id)" class="nav-link">
+                                                    <i class="fa fa-minus" aria-hidden="true"></i>
+                                                    <span t-field="categ.name"></span>
+                                                </a>
+                                            </li>
+                                        </t>
+                                    </t>
+                                    <div class="vc_empty_space" style="height: 25px">
+                                        <span class="vc_empty_space_inner"></span>
+                                    </div>
+                                    <div class="text-center">
+                                        <a class="vc_btn3 vc_btn3-shape-square vc_btn3-block btn btn-md btn-primary"
+                                           href="/shop" title="">HUGE SALE - 70% Off
+                                        </a>
+                                    </div>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-9 col-12 col-lg-9 col-sm-9">
+                        <div id="myCarousel1544629000328"
+                             class="s_carousel s_carousel_default carousel slide" data-interval="10000">
+                            <ol class="carousel-indicators">
+                                <li data-target="#myCarousel1544629000328" data-slide-to="0"
+                                    class="active"/>
+                                <li data-target="#myCarousel1544629000328" data-slide-to="1"/>
+                                <li data-target="#myCarousel1544629000328" data-slide-to="2"/>
+                            </ol>
+                            <div class="carousel-inner">
+                                <div class="carousel-item oe_custom_bg oe_img_bg pt152 pb152 active"
+                                     style="background-image: url(&quot;/tadeas_theme/static/src/img/shop2_slide1.jpg&quot;);"
+                                     data-name="Slide">
+                                    <div class="container">
+                                        <div class="row content">
+                                            <div class="carousel-content col-lg-6 offset-lg-1">
+                                                <div class="s_title pb8" data-name="Title">
+                                                    <h2 class="s_title_default text-white">
+                                                        <font style="font-size: 62px;"
+                                                              class="o_default_snippet_text">Slide Title
+                                                        </font>
+                                                    </h2>
+                                                </div>
+                                                <p class="lead o_default_snippet_text text-white">Use this snippet
+                                                    to presents your content in a slideshow-like format.
+                                                    <br/>
+                                                    Don't write about products or services here, write
+                                                    about solutions.
+                                                </p>
+                                                <div class="s_btn text-left pt16 pb16"
+                                                     data-name="Buttons">
+                                                    <a href="/aboutus"
+                                                       class="btn btn-secondary flat o_default_snippet_text">
+                                                        About us
+                                                    </a>
+                                                    <a href="/contactus"
+                                                       class="btn btn-primary flat o_default_snippet_text">
+                                                        Contact us
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item oe_custom_bg oe_img_bg pt152 pb152"
+                                     style="background-image: url(&quot;/tadeas_theme/static/src/img/shop2_slide2.jpg&quot;);"
+                                     data-name="Slide">
+                                    <div class="container">
+                                        <div class="row content">
+                                            <div class="carousel-content col-lg-6 offset-lg-1">
+                                                <div class="s_title pb8" data-name="Title">
+                                                    <h2 class="s_title_default">
+                                                        <font style="font-size: 62px;"
+                                                              class="o_default_snippet_text">Slide Title
+                                                        </font>
+                                                    </h2>
+                                                </div>
+                                                <p class="lead o_default_snippet_text">Use this snippet
+                                                    to presents your content in a slideshow-like format.
+                                                    <br/>
+                                                    Don't write about products or services here, write
+                                                    about solutions.
+                                                </p>
+                                                <div class="s_btn text-left pt16 pb16"
+                                                     data-name="Buttons">
+                                                    <a href="/aboutus"
+                                                       class="btn btn-secondary flat o_default_snippet_text">
+                                                        About us
+                                                    </a>
+                                                    <a href="/contactus"
+                                                       class="btn btn-primary flat o_default_snippet_text">
+                                                        Contact us
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item oe_custom_bg oe_img_bg pt152 pb152"
+                                     style="background-image: url(&quot;/tadeas_theme/static/src/img/shop2_slide3.jpg&quot;);"
+                                     data-name="Slide">
+                                    <div class="container">
+                                        <div class="row content">
+                                            <div class="carousel-content col-lg-6 offset-lg-1">
+                                                <div class="s_title pb8" data-name="Title">
+                                                    <h2 class="s_title_default">
+                                                        <font style="font-size: 62px;"
+                                                              class="o_default_snippet_text">Slide Title
+                                                        </font>
+                                                    </h2>
+                                                </div>
+                                                <p class="lead o_default_snippet_text">Use this snippet
+                                                    to presents your content in a slideshow-like format.
+                                                    <br/>
+                                                    Don't write about products or services here, write
+                                                    about solutions.
+                                                </p>
+                                                <div class="s_btn text-left pt16 pb16"
+                                                     data-name="Buttons">
+                                                    <a href="/aboutus"
+                                                       class="btn btn-secondary flat o_default_snippet_text">
+                                                        About us
+                                                    </a>
+                                                    <a href="/contactus"
+                                                       class="btn btn-primary flat o_default_snippet_text">
+                                                        Contact us
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-control-prev" data-target="#myCarousel1544629000328"
+                                 data-slide="prev" role="img" aria-label="Previous" title="Previous">
+                                <span class="carousel-control-prev-icon"/>
+                                <span class="sr-only o_default_snippet_text">Previous</span>
+                            </div>
+                            <div class="carousel-control-next" data-target="#myCarousel1544629000328"
+                                 data-slide="next" role="img" aria-label="Next" title="Next">
+                                <span class="carousel-control-next-icon"/>
+                                <span class="sr-only o_default_snippet_text">Next</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+
+</odoo>

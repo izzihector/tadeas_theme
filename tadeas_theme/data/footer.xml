@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <template id="tadeas_theme_footer_custom"
+              inherit_id="website.footer_custom"
+              name="Footer">
+        <xpath expr="//div[@id='footer']" position="replace">
+            <div class="oe_structure" id="footer" style="padding: 0px !important;">
+                <section class="footer-top">
+                    <div class="footer-ourservice">
+                        <div class="container">
+                            <div class="footer-ribbon">Get in touch</div>
+                            <div class="row">
+                                <div class="col-lg-3">
+                                    <aside id="contact-info-widget-2" class="widget contact-info">
+                                        <h3 class="widget-title">CONTACT INFORMATION</h3>
+                                        <div class="contact-info contact-info-block">
+                                            <ul class="contact-details">
+                                                <li>
+                                                    <i class="fa fa-map-marker"></i>
+                                                    <strong>ADDRESS:</strong>
+                                                    <span>3444 South Avenue Street, New York</span>
+                                                </li>
+                                                <li>
+                                                    <i class="fa fa-phone"></i>
+                                                    <strong>PHONE:</strong>
+                                                    <span>+1 555 123 8069</span>
+                                                </li>
+                                                <li>
+                                                    <i class="fa fa-envelope"></i>
+                                                    <strong>EMAIL:</strong>
+                                                    <span>
+                                                        <a href="mailto:mail@example.com">info@yourcompany.example.com</a>
+                                                    </span>
+                                                </li>
+                                                <li>
+                                                    <i class="fa fa-clock-o"></i>
+                                                    <strong>WORKING DAYS/HOURS:</strong>
+                                                    <span>Mon - Sun / 9:00 AM - 8:00 PM</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </aside>
+                                </div>
+                                <div class="col-lg-9">
+                                    <aside id="block-widget-4" class="widget widget-block">
+                                        <div class="block">
+                                            <style type="text/css">.vc_custom_1489841894940{border-top-width: 1px
+                                                !important;padding-top: 32px !important;border-top-color: #3d3d38
+                                                !important;border-top-style: solid
+                                                !important;}.vc_custom_1506170369566{margin-top: 28px
+                                                !important;margin-bottom: 0px
+                                                !important;}.vc_custom_1491024296020{margin-bottom: 16px
+                                                !important;}.vc_custom_1491024306428{margin-bottom: 10px
+                                                !important;}.vc_custom_1491024314022{margin-bottom: 10px !important;}
+                                            </style>
+                                            <div class="porto-block ">
+                                                <div class="vc_row wpb_row row">
+                                                    <div class="vc_column_container col-md-6">
+                                                        <div class="wpb_wrapper vc_column-inner">
+                                                            <h4 class="text-white">
+                                                                BE THE FIRST TO KNOW
+                                                            </h4>
+                                                            <div class="wpb_text_column wpb_content_element mb32">
+                                                                <p style="line-height: 20px;">Get all the latest
+                                                                    information on Events, Sales and Offers.
+                                                                    <br/>
+                                                                    Sign up for newsletter today.
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="vc_column_container col-md-6 vc_custom_1506170369566">
+                                                        <div class="block-subscribe">
+                                                            <div class="input-group js_subscribe d-none"
+                                                                 data-list-id="1"
+                                                                 data-subscribe="off">
+                                                                <input type="email" name="email"
+                                                                       class="js_subscribe_email form-control"
+                                                                       placeholder="your email..."
+                                                                       style="    border-radius: 0;    height: 50px;"/>
+                                                                <span class="input-group-btn">
+                                                                    <a href="#" style="    border-radius: 0; height: 50px;    padding-top: 14px;"
+                                                                       class="btn btn-primary subscribe js_subscribe_btn o_default_snippet_text">
+                                                                        Subscribe
+                                                                    </a>
+                                                                    <a href="#"
+                                                                       class="btn btn-success js_subscribed_btn hidden o_default_snippet_text"
+                                                                       disabled="disabled"
+                                                                       style="    border-radius: 0; height: 50px;    padding-top: 14px;">
+                                                                        Thanks
+                                                                    </a>
+                                                                </span>
+                                                                <div class="alert alert-success hidden o_default_snippet_text">
+                                                                    Thanks for your
+                                                                    subscription!
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="vc_row wpb_row row vc_custom_1489841894940 vc_row-has-fill">
+                                                    <div class="vc_column_container col-md-5">
+                                                        <div class="wpb_wrapper vc_column-inner">
+                                                            <h4 class="text-white">
+                                                                MY ACCOUNT
+                                                            </h4>
+                                                            <div class="vc_row wpb_row vc_inner row">
+                                                                <div class="vc_column_container col-md-6">
+                                                                    <ul class="list-unstyled">
+                                                                        <li>
+                                                                            <a title="About us"
+                                                                               href="/aboutus">
+                                                                                About us
+                                                                            </a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a title="Contact Us"
+                                                                               href="/contactus">
+                                                                                Contact us
+                                                                            </a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a title="My Account"
+                                                                               href="/my/home">
+                                                                                My Account
+                                                                            </a>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                                <div class="vc_column_container col-md-6">
+                                                                    <ul class="list-unstyled">
+                                                                        <li>
+                                                                            <a title="Order history"
+                                                                               href="#">
+                                                                                Order history
+                                                                            </a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a title="Contact us" href="#">
+                                                                                Advanced search
+                                                                            </a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a title="Login"
+                                                                               href="/web/login">
+                                                                                Login
+                                                                            </a>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="vc_column_container col-md-7">
+                                                        <div class="wpb_wrapper vc_column-inner">
+                                                            <h4 class="text-white">
+                                                                MAIN FEATURES
+                                                            </h4>
+                                                            <div class="vc_row wpb_row vc_inner row">
+                                                                <div class="vc_column_container col-md-6">
+                                                                    <ul class="list-unstyled">
+                                                                        <li>
+                                                                            <a href="#">Super Fast Tecspek
+                                                                                Theme
+                                                                            </a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="#">1st Fully working
+                                                                                odoo Theme
+                                                                            </a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="#">16 Unique Snippets
+                                                                                Layouts
+                                                                            </a>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                                <div class="vc_column_container col-md-6">
+                                                                    <ul class="list-unstyled">
+                                                                        <li>
+                                                                            <a href="#">Powerful Admin
+                                                                                Panel
+                                                                            </a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="#">Mobile &amp; Retina
+                                                                                Optimized
+                                                                            </a>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </aside>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </xpath>
+    </template>
+</odoo>
